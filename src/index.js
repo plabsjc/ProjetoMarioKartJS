@@ -68,18 +68,7 @@ async function playRacingEngine (character1, character2){
         totalPointsPlayer2 = character2.Speed + diceResult2;
 
         
-        // if(totalPointsPlayer1 > totalPointsPlayer2){
-        //     console.log(`${character1.Character} ganhou essa rodada`);
-        //     player1Point++;
-        // }
-        // else if(totalPointsPlayer1 == totalPointsPlayer2){
-        //     console.log(`Partida empatada`);
-        //     i--;
-        // }
-        // else{
-        //     console.log(`${character2.Character} ganhou essa rodada`);
-        //     player2Point++;
-        // }
+    
 
         totalPointsPlayer1 > totalPointsPlayer2 ? (player1Point +=1 , console.log(`O ${character1.Character} venceu esta rodada`),resultIcon1 = iconWin, resultIcon2 = iconLose) //Sei que estou fazendo redundancia de código e poderia muito bem colocar o icon direto no c.log, mas estou praticando minha lógica de programação. 
         : totalPointsPlayer1 < totalPointsPlayer2 ? (player2Point +=1 , console.log(`O ${character2.Character} venceu esta rodada`),resultIcon2 = iconWin, resultIcon1 = iconLose) 
@@ -94,18 +83,7 @@ async function playRacingEngine (character1, character2){
         totalPointsPlayer2 = character2.Maneuverability + diceResult2;
 
        
-        // if(totalPointsPlayer1 > totalPointsPlayer2){
-        //     console.log(`${character1.Character} ganhou essa rodada`);
-        //     player1Point++;
-        // }
-        // else if(totalPointsPlayer1 == totalPointsPlayer2){
-        //     console.log(`Partida empatada`);
-        //     i--;
-        // }
-        // else{
-        //     console.log(`${character2.Character} ganhou essa rodada`);
-        //     player2Point++;
-        // }
+       
 
         totalPointsPlayer1 > totalPointsPlayer2 ? (player1Point += 1 , console.log(`O ${character1.Character} venceu a rodada`,),resultIcon1 = iconWin, resultIcon2 = iconLose)
         : totalPointsPlayer1 < totalPointsPlayer2 ? (player2Point += 1 , console.log(`O ${character2.Character} venceu a rodada`),resultIcon2 = iconWin, resultIcon1 = iconLose)
@@ -120,18 +98,7 @@ async function playRacingEngine (character1, character2){
         totalPointsPlayer2 = character2.Power + diceResult2;
 
         
-        // if(totalPointsPlayer1 > totalPointsPlayer2){
-        //     console.log(`${character1.Character} ganhou essa rodada`);
-        //     player1Point++;
-        // }
-        // else if(totalPointsPlayer1 == totalPointsPlayer2){
-        //     console.log(`Partida empatada`);
-        //     i--;
-        // }
-        // else{
-        //     console.log(`${character2.Character} ganhou essa rodada`);
-        //     player2Point++;
-        // }
+       
 
         totalPointsPlayer1 > totalPointsPlayer2 ? (player1Point += 1 , console.log(`O ${character1.Character} venceu esta rodada`),resultIcon1 = iconWin, resultIcon2 = iconLose)
         : totalPointsPlayer1 < totalPointsPlayer2 ? (player2Point +=1 , console.log(`O ${character2.Character} venceu esta rodada`),resultIcon2 = iconWin, resultIcon1 = iconLose)
@@ -140,15 +107,7 @@ async function playRacingEngine (character1, character2){
         await logRollResult(character2.Character, "power", diceResult2, character2.Power, resultIcon2);
         
     }
-    // if(i == 5){
-    //     if(player1Point > player2Point){
-    //         console.log(`--------------------------------------------------\n${character1.Character} ganhou a partida com ${player1Point} pontos 🏁🎉🎉🎉🍾🍾🍾`); 
-    //     }
-    //     else if(player1Point < player2Point){
-    //         console.log(`--------------------------------------------------\n${character2.Character} ganhou a partida com ${player2Point} pontos 🏁🎉🎉🎉🍾🍾🍾`); 
-    //     }
-
-    // }
+   
     i == lengthFor && player1Point > player2Point ? console.log(`${character1.Character} ganhou a partida com ${player1Point} pontos`) :
     i == lengthFor && player1Point < player2Point ? console.log(`${character2.Character} ganhou a partida com ${player2Point} pontos`) :
     i == 5 && player1Point == player2Point ? (console.log(`Tivemos um empate !!! Vamos desempatar...`), lengthFor+=1, desempateString = "Desempate Final") : null;
@@ -167,92 +126,6 @@ async function playRacingEngine (character1, character2){
 }())
 
 
-
-
-// Minha implementação antes de ver a aula.
-
-// const trackMapsArray = ["Reta","Curva","Batalha"]
-// let drawnMaps = "";
-
-// function trackMap (){
-//     let result = Math.floor(Math.random() * trackMapsArray.length);
-//     return drawnMaps = trackMapsArray[result]
-// }
-
-// (async function main(){
-//     pontosMario = 0;
-//     pontosYoshi = 0;
-//     console.log("Super Mario Kart JS Logic on Console. 🏁🚘🚖");
-//     console.log(`Corrida entre  ${player1.Character} e ${player2.Character}! Começando...\nLet's Goooooo! 🏎️   🏎️`);
-//     let i = 1
-
-//     while (i < 6){
-//         console.log(`\nRound ${i}`);
-//         sorteioPista = trackMap();
-//         sorteioDadoPlayer1 = await rollDice();
-//         sorteioDadoPlayer2 = await rollDice();
-//         console.log(`Tipo da pista ${sorteioPista}`);
-
-//         if (sorteioPista == "Curva"){
-//             console.log(`${player1.Character} tem um Dirigibilidade de ${player1.Maneuverability} e tirou ${sorteioDadoPlayer1} no dado`);
-//             console.log(`${player2.Character} tem um Dirigibilidade de ${player2.Maneuverability} e tirou ${sorteioDadoPlayer2} no dado`);
-            
-            
-//             if(player1.Maneuverability + sorteioDadoPlayer1 > player2.Maneuverability + sorteioDadoPlayer2){
-//                 pontosMario++;
-//                 console.log(`O ${player1.Character} ganhou a rodada! ${pontosMario} ponto's`);
-//                 i++;
-//             }
-//             else{
-//                 pontosYoshi++;
-//                 console.log(`O ${player2.Character} ganhou a rodada! ${pontosYoshi}ponto's`);
-//                 i++;
-//             }
-            
-//         }
-
-//         else if (sorteioPista == "Reta"){
-//             console.log(`${player1.Character} tem um Speed de ${player1.Speed} e tirou ${sorteioDadoPlayer1} no dado`);
-//             console.log(`${player2.Character} tem um Speed de ${player2.Speed} e tirou ${sorteioDadoPlayer2} no dado`);
-//              if(player1.Speed + sorteioDadoPlayer1 > player2.Speed + sorteioDadoPlayer2){
-//                 pontosMario++;
-//                 console.log(`O ${player1.Character} ganhou a rodada! ${pontosMario} ponto's`);
-//                 i++;
-//             }
-//             else{
-//                 pontosYoshi++;
-//                 console.log(`O ${player2.Character} ganhou a rodada! ${pontosYoshi} ponto's`);
-//                 i++;
-//             }
-//         }
-
-//         else if (sorteioPista == "Batalha"){
-//             console.log(`${player1.Character} tem um Power de ${player1.Power} e tirou ${sorteioDadoPlayer1} no dado`);
-//             console.log(`${player2.Character} tem um Power de ${player2.Power} e tirou ${sorteioDadoPlayer2} no dado`);
-//              if(player1.Power + sorteioDadoPlayer1 > player2.Power + sorteioDadoPlayer2){
-//                 pontosMario++;
-//                 console.log(`O ${player1.Character} ganhou a rodada! ${pontosMario} ponto's`);
-//                 i++;
-//             }
-//             else{
-//                 pontosYoshi++;
-//                 console.log(`O ${player2.Character} ganhou a rodada! ${pontosYoshi} ponto's`);
-//                 i++;
-//             }
-//         }
-//         if( i == 6){
-//             if(pontosMario > pontosYoshi){
-//                 console.log(`\nO ${player1.Character} venceu a partida`);
-    
-//             }
-//             else{
-//                 console.log(`\nO ${player2.Character} venceu a partida`);
-//             }
-//         }
-        
-//     }
-// }
-// )();
 
 
 
